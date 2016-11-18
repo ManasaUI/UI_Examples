@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      .class_demo
+      {
+        background-color:blue;
+      }
+      #id_an
+      {
+        Height:50px;
+        width:20px;
+        background:red;
+        position:relative;
+        -webkit-animation: mymove 1s infinite; /* Chrome, Safari, Opera */
+       animation: mymove 1s infinite;
+      }
+     
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mynewmove {
+    from {top: 0px;}
+    to {top: 200px;}
+}
+
+@keyframes mymove {
+    from {left: 0px;}
+    to {left: 200px;}
+}
+
+      
+    </style>
+  </head>
+
+  <body>
+   <h1 id="id_demo">Hello Plunker!</h1>
+    <input type=button value="click me chenge the content!!" onclick="chg_content()"><br/><br/>
+    <input type=button value="click to check the attribute!!" onclick="has_attribute()"><br/><br/>
+     <p>Hello Plunker!</p>
+   <input type=button value="click me to chenge the attribute!!" onclick="chg_attribute()"><br/>
+   <br/>
+   <h4>Hello Venu</h4>
+    <input type=button value="click to chenge the style!!" onclick="chg_style()">
+
+<div id="id_an"></div>
+<button onclick="myFunction()">Try it</button><br/><br/>
+
+<h2 id="id_show" style="display:none"> Hello we are visable</h2><br/><br/>
+<input type="button" value="Click me to show..." onclick="show()">
+<input type="button" value="Click me to hide..." onclick="hide()">
+    <script src="script.js"></script>
+    
+  </body>
+
+</html>

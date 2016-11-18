@@ -1,0 +1,49 @@
+<html>
+<head>
+<script type="text/javascript">
+        function addRow()
+        {
+            var tr = document.createElement("tr");
+ 
+            for(var c = 0; c < tbl.rows[0].childNodes.length; c++)
+            {
+                var td = document.createElement("td");
+                td.innerText = "Column " + c;
+                tr.appendChild(td);
+ 
+                tr.style.backgroundColor = "lightgrey";
+                td.onmouseover = function()
+
+                {
+                    this.style.backgroundColor = "lightyellow";
+                }
+                td.onmouseout = function()
+
+                {
+                    this.style.backgroundColor = "lightgrey";
+                }
+                td.onclick = function()
+
+                {
+                    alert(this.innerText);
+                }
+            }
+ 
+            tbl.children[0].appendChild(tr);
+        }
+</script>
+</head>
+<body>
+      <table id="tbl" width="60%" border="1">
+             <tr>
+                 <td>1</td>
+                 <td>2</td>
+                 <td>3</td>
+                 <td>4</td>
+                 <td>5</td>
+             </tr>
+      </table>
+      <br/><br/>
+      <input type="button" onclick="addRow();" value="Add Row" />
+</body>
+</html>

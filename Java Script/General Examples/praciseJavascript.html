@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<form name="myForm" id="form_demo">
+<fieldset>
+<legend>Fill the all entries</legend>
+Name:-<input name="name" type="text" ></input>
+Email:-<input name="email" type="email" ></input>
+Contry:-<input name="country" type="country" ></input>
+</fieldset>
+</form>
+<input type="button" value="Submit" onclick="myTry()"></input>
+<input type="button" value="Reset" onclick="reset()"/>
+<table id="table_demo" border="3px solid black">
+</table>
+<script type="text/javascript">
+var form=document.forms['myForm'];
+var text="";
+function myTry() {
+	for (var i = 0; i < form.length; i++) 
+	{
+		text+=form.elements[i].value+",";
+		document.getElementById('table_demo').innerHTML=text;
+	}
+
+}
+	// var table=document.getElementById('table_demo');
+	// var tr=document.createElement('TR');
+	// 	var newText  = document.createTextNode(s);
+	// 		  tr.appendChild(newText);
+	// 		 table.appendChild(tr);
+
+		// body...
+
+	
+
+function reset(){
+	document.getElementById("form_demo").reset();
+}
+
+	
+</script>
+
+</body>
+</html>

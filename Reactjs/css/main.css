@@ -1,0 +1,24 @@
+.out{
+	background-color: #D1F2EB;
+	width:200px;
+	height:200px;
+	
+}
+.in{
+	background-color: #D5DBDB;
+	width:150px;
+	height:80px;
+	/*border:1px solid black;*/
+}
+.primary{
+	background-color: #2980B9;
+}
+.danger{
+	background-color: red;
+}
+.save{
+	background-color: green;
+}
+button{
+	display: inline;
+}

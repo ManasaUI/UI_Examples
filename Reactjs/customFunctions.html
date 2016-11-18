@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    
+</head>
+<body>
+<div id="content"></div>
+<script type="text/jsx">
+	var NewComp=React.createClass({
+	edit:function(){
+	alert("Text is ready to edit....!!");
+	},
+	remove:function(){
+	alert("Are you sure to removing text.?")
+	},
+	render:function(){
+	return( <div className="out">
+	          <div className="in"> {this.props.children}<br/>
+		                 <button className="primary"onClick={this.edit}>Edit</button>
+		                  <button className="danger"onClick={this.remove}>Remove</button>
+		       </div>
+	</div>);
+	}
+
+	});
+	React.render(
+	<div>
+	<NewComp>Samlpe data 1</NewComp>
+	<NewComp>Sample data 2</NewComp>
+	<NewComp> Sample data 3</NewComp>
+	</div>,document.getElementById('content'));
+</script>
+
+</body>
+</html>

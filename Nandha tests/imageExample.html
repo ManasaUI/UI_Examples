@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	imag{
+		transparent-background.gif;
+	}
+	</style>
+</head>
+<body>
+<h1 align="center">Sampe test of images</h1><br>
+<img src="test.jpg" width="300" height="200" alt="Image is not displaying" onclick="myFunction()" />
+<script type="text/javascript">
+count=0;
+	function myFunction() {
+		//alert('Hello image is clicked');
+		count+=1;
+		
+			if(count<=5){
+				//alert('Hello'+count);
+				var x=document.createElement("IMG");
+				x.setAttribute("src","set.jpg");
+				x.setAttribute("width","300px");
+				x.setAttribute("height","200px");
+				x.setAttribute("id","img_demo");
+				document.body.appendChild(x);
+
+
+			}
+			else if(count<=10){
+				var child=document.getElementById('img_demo');
+				document.body.removeChild(child);
+			}
+			else{
+				alert("no more images to display and delete");
+			}
+	
+
+		// body...
+	}
+</script>
+</body>
+</html>

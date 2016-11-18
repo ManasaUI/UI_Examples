@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Button Example</title>
+	<style type="text/css">
+	#id_demo{
+		height:300px;
+		width:400px;
+		border:3px solid black;
+		font-size:20px;
+
+	}
+	</style>
+</head>
+<body>
+<div id="id_demo">This is DIV tag<br><br>
+</div>
+<input type="button" onclick="myFunction()" value="Add Button"></input>
+<script type="text/javascript">
+var count=0;
+	function myFunction(){
+		count=count+1;
+		var s=count.toString();
+	var butn=document.createElement("BUTTON");
+	var textNode=document.createTextNode("ClickMe"+count);
+		butn.appendChild(textNode);
+		var elem=document.getElementById('id_demo');
+		var button_new=elem.appendChild(butn);
+		button_new.setAttribute('id',s);
+		button_new.addEventListener('click',function(){
+			var d=document.getElementById('id_demo');
+			var x=document.getElementById(s);
+			d.removeChild(x);
+
+			//alert("clicked me");
+
+
+		});
+	//document.div.appendChild(new_button);
+		// butn.setAttribute('id','button_demo');
+		
+
+		// butn.addEventListener('click',function(){
+		// 	document.getElementById('button_demo').visability='hidden';
+
+		// });
+		
+
+	} 
+</script>
+
+</body>
+</html>

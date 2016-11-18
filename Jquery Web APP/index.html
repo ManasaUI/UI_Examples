@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title id='Description'>jQuery</title>
+    <link rel="stylesheet" href="jqx.base.css" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script type="text/javascript" src="jqxcore.js"></script>
+    <script type="text/javascript" src="jqxbuttons.js"></script>
+    <script type="text/javascript" src="jqxscrollbar.js"></script>
+    <script type="text/javascript" src="jqxmenu.js"></script>
+    <script type="text/javascript" src="jqxgrid.js"></script>
+    <script type="text/javascript" src="jqxgrid.selection.js"></script> 
+    <script type="text/javascript" src="jqxgrid.columnsresize.js"></script> 
+    <script type="text/javascript" src="jqxdata.js"></script> 
+	<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.10/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+		var data = [];
+		$("#clearButton").click(function(){
+		data = [];
+		            var source =
+            {
+				localdata: data,
+                datatype: "json",
+                datafields: [
+                    { name: 'reqField', type: 'string' },
+                    { name: 'Date', type: 'string' },
+                    { name: 'colo', type: 'string' }
+                ]
+            };
+            var dataAdapter = new $.jqx.dataAdapter(source);
+
+            $("#jqxgrid").jqxGrid(
+            {
+                width: 750,
+                source: dataAdapter,
+                columnsresize: true,
+                columns: [
+                  { text: 'reqField', datafield: 'reqField', width: 250 , validation: function (cell, value) {
+                          if (value.length == 0) {
+                              return { result: false, message: "Quantity should be in the 0-150 interval" };
+                          }
+                          return true;
+                      }
+					  },
+                  { text: 'Date', datafield: 'Date', width: 250 },
+                  { text: 'colo', datafield: 'colo', width: 250 }
+              ]
+            });
+		
+		});
+		$("#addButton").click(function(){
+
+            var rf= $('#txt').val();
+			var dt= $('#dt').val();
+			var col= $('#colors').val();	
+			if(rf != ""){
+			var jsonobj={ "reqField": rf, "Date": dt, "colo": col };
+			data.push(jsonobj);
+
+            // prepare the data
+            var source =
+            {
+				localdata: data,
+                datatype: "json",
+                datafields: [
+                    { name: 'reqField', type: 'string' },
+                    { name: 'Date', type: 'string' },
+                    { name: 'colo', type: 'string' }
+                ]
+            };
+            var dataAdapter = new $.jqx.dataAdapter(source);
+
+            $("#jqxgrid").jqxGrid(
+            {
+                width: 750,
+                source: dataAdapter,
+                columnsresize: true,
+                columns: [
+                  { text: 'reqField', datafield: 'reqField', width: 250 },
+                  { text: 'Date', datafield: 'Date', width: 250 },
+                  { text: 'colo', datafield: 'colo', width: 250 }
+              ]
+            });
+        }});
+		$("#jqxgrid").bind('rowselect', function (event) {
+    var row = event.args.rowindex;
+    var datarow = $("#jqxgrid").jqxGrid('getrowdata', row);
+	 $("#txt").val(datarow.reqField);
+	 $("#dt").val(datarow.Date);
+	 $("#colors").val(datarow.colo);
+});
+});
+    </script>
+</head>
+<body class='default'>
+<form action=#>
+<h3> Show user data in grid view using jQuery<h3>
+<p>
+<input type='text' class='fieldOne' id='txt' required/>
+
+<input type='date' class='fieldTwo' id='dt' />
+<select id = "colors">
+  <option value = "Yellow">Yellow</option>
+  <option value = "Red">Red</option>
+  <option value = "Green">Green</option>
+  <option value = "Black">Black</option>
+  <option value = "White">White</option>
+  <option value = "Orange">Orange</option>
+</select></br>
+</p>
+<input type = "submit" value = "ADD" id ="addButton" >
+<input type = "button" value = "CLEAR" id ="clearButton"></br>
+
+    <div id='jqxWidget' style="font-size: 13px; font-family: Verdana; float: left;">
+        <div id="jqxgrid"></div></br>
+    </div>
+	</form>
+</body>
+</html>

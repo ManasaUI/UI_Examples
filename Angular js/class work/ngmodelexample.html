@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js">
+	</script>
+	<style type="text/css">
+	.ng-valid
+	{
+		background-color: green;
+	}
+	.ng-invalid{
+		background-color: red;
+	}
+	.ng-pristine{
+		background-color: #A9A9A9;
+	}
+	</style>
+</head>
+<body ng-app="">
+<!-- ngmodel for dinding the values of html controler to the applcation data.-->
+<input type="text" ng-model="name" placeholder="please enter a name"></input>
+<p ng-bind="name"></p>
+<span>{{name}}</span><br/><br/>
+<!-- ng-model is for validationg the applicaton data-->
+<h3>Basic input validation:-</h3>
+Enter Name:-<input type="text" ng-model="txtValue" required />{{txtValue}}<br/><br/>
+Email:-<input type="email" ng-model="emailValue" required />{{emailValue}}<br/><br/>
+To day Date:-<input  type="date" ng-model="dateValue" required />{{dateValue}}<br/><br/>
+Enter your age:-<input type="number" ng-model="numberValue" required />{{numberValue}}<br/>
+<br/>
+Enter Your fb Url:-<input type="url" ng-model="urlValue"/>{{urlValue}} <br/><br/>
+<!-- advanced input validaton-->
+<div>
+<h3>Advanced input Validation:-</h3>
+<form name="myForm">
+Email:-<input type="email" name="checkemail" ng-model="emailValue"required></input>
+<span ng-show="myForm.checkemail.$error.email">not a valid email address</span><br/><br/>
+<h1>Check for the application status</h1><br/>
+
+<p>Valid:-{{myForm.checkemail.$valid}}</p>
+<p>Touched:-{{myForm.checkemail.$touched}}</p>
+<p>Dirty:-{{myForm.checkemail.$dirty}}</p>
+	
+</form>
+
+</div>
+
+
+</body>
+</html>

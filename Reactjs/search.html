@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/search.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+<div id="content"></div>
+<script type="text/jsx">
+	var Comp=React.createClass({
+	  getInitialState: function(){
+        return { searchString: '' };
+    },
+
+    handleChange: function(e){
+        this.setState({searchString:e.target.value});
+    },
+    render: function() {
+        var libraries = this.props.items,
+            searchString = this.state.searchString.trim().toLowerCase();
+        if(searchString.length > 0){
+            libraries = libraries.filter(function(l){
+                return l.name.toLowerCase().match( searchString );
+            });
+
+        }
+
+        return <div>
+                    <input type="text" value={this.state.searchString} onChange={this.handleChange} placeholder="Type here" />
+
+                    <ul> 
+
+                        { libraries.map(function(l){
+                            return <li>{l.name} <a href={l.url}>{l.url}</a></li>
+                        }) }
+
+                    </ul>
+
+                </div>;
+
+    }
+	});
+	var libraries=[
+	{name:'Angularjs',url:'www.angularjs.com'},
+	{name:'Backbonejs',url:'www.backbonejs.com'},
+	{name:'Emberjs',url:'www.emberjs.com'},
+	{name:'nodejs',url:'www.nodejs.com'},
+	{name:'Expressjs',url:'www.expressjs.com'},
+	{name:'MongoDB',url:'www.mongodb.com'},
+	{name:'Reactjs',url:'www.reactjs.com'},
+	{name:'HTML',url:'www.html.com'},
+	{name:'CSS',url:'www.css.com'},
+	{name:'Bootstrap',url:'www.bootstrap.com'},
+	{name:'JavaScript',url:'www.javascript.com'},
+	{name:'JQuery',url:'www.jquery.com'},
+	];
+	React.render(<Comp items={libraries}/>,document.getElementById('content'));
+</script>
+
+</body>
+</html>

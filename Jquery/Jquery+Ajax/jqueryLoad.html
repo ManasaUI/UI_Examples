@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+<div id="div_demo">
+</div>
+<button>Display text from external file</button>
+<script type="text/javascript">
+$('button').click(function(){
+	$('#div_demo').load('sample.json',function(responseText,statusText,xhr)
+	{
+		if(statusText=="success"){
+			alert('successfully loded');
+		}
+		if(statusText=="error")
+		{
+			alert("status:"+xhr.status+",text:"+xhr.statusText);
+
+		}
+	});
+});
+	
+</script>
+
+</body>
+</html>

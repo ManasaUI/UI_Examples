@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+<div id="content"></div>
+<script type="text/jsx">
+	var Comp=React.createClass({
+	getInitialState:function(){
+	return {editing:false}
+	},
+	edit:function(){
+	this.setState({editing:true});
+	//alert("editing....");
+	},
+	remove:function(){
+	alert("removinggg....");
+	},
+	save:function(){
+	var val=this.refs.newText.value;
+	alert("new text is:- " + val);
+	this.setState({editing:false});
+	},
+	renderNormal:function(){
+	return (<div className="out">
+	<div className="in"> {this.props.children}
+	<button onClick={this.edit} className="primary">Edit</button>
+	<button onClick={this.remove} className="danger">Remove</button>
+	</div>
+	</div>);
+	},
+	renderForm:function(){
+       return (<div className="out">
+	<textarea ref="newText" defaultValue={this.props.children}></textarea>
+    <button onClick={this.save} className="save">Save</button>
+	</div>);
+	},
+	render: function(){
+	if(this.state.editing){
+	return this.renderForm();
+	}
+	else{
+	return this.renderNormal();
+	}
+	}
+	
+
+	});
+	React.render(<div>
+	<Comp>You can edit text here</Comp>
+	<Comp>You can edit text here</Comp>
+	<Comp>You can edit text here</Comp>
+	</div>,document.getElementById('content'));
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+<div id="content"></div>
+<script type="text/jsx">
+
+var Servicechooser=React.createClass({
+render: function(){
+retrun ();
+}
+	
+});
+
+
+	var Services=React.createClass({
+	getInitialState: function(){
+	return {active: false};
+	},
+	clickHandler: function(){
+	var active=!this.state.active;
+	this.setState({active:active});
+	 this.props.addTotal( active ? this.props.price : -this.props.price );
+
+	},
+
+	render: function(){
+	return (<div>
+	<p className={ this.state.active ? 'active' : '' } onClick={this.clickHandler}>
+		{this.props.name} <b>${this.props.price.toFixed(2)}</b>
+	</p>
+	</div>);
+	}
+	});
+	var orders=[
+	{name:"Angularjs", cost:250},
+	{name:"Nodejs", cost:350},
+	{name:"Expressjs", cost:200},
+	{name:"Reactjs", cost:200},
+	{name:"Bootstrap", cost:150},
+	{name:"Html", cost:100},
+	{name:"Css", cost:150},
+	{name:"Javascript", cost:200},
+	{name:"Jquery", cost:200},
+	];
+	React.render(<Services items={orders}/>,document.getElementById('content'));
+</script>
+</body>
+</html>

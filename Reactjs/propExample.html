@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+<div id="content"></div>
+<script type="text/jsx">
+var Comp=React.createClass({
+render: function(){
+return ( <h2> {this.props.user} likes to eat {this.props.food} </h2> );
+}
+	
+});
+React.render(
+<div>
+	<Comp user="Ram Reddy" food="Fruits" />
+	<Comp user="Manasa" food="Ice creams" />
+	<Comp user="Haritha" food="Dry Fruits" />
+	<Comp user="Sujatha" food="Juice" />
+	<Comp user="Venu" food="Biryanies" />
+
+</div>,document.getElementById('content'));
+	
+</script>
+
+</body>
+</html>

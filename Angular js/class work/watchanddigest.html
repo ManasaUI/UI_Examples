@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+</head>
+<body ng-app="myModule" >
+<div ng-controller="myController">
+<input type="text" ng-model="myModel"></input>
+	<p>Old value= {{oldvalue}}</p>
+	<p>new value= {{newvalue}}</p><br/>
+
+	{{digest_val}} <br/><br/>
+
+	<button id="btn_id">click me to chenge</button>
+
+</div>
+
+<script type="text/javascript">
+var myApp=angular.module("myModule",[]);
+myApp.controller("myController",function ($scope) {
+	$scope.$watch('myModel', function(old_val,new_val)
+	{
+		$scope.oldvalue=old_val;
+		$scope.newvalue=new_val;
+
+	});
+	$scope.digest_val="hello every one...!!";
+	document.getElementById('btn_id').addEventListener('click',function()
+	{
+		$scope.digest_val="hello manasa";
+		$scope.$digest();
+	});
+	// body...
+});
+	
+</script>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body >
+<button onclick="myOpen()">OpenWindow</button>
+<button onclick="myMove()" >Move Window</button>
+<script type="text/javascript">
+var myWindow;
+function myOpen(argument) {
+	myWindow=window.open("",'myWindow',"width=400,height=200");
+	myWindow.document.write("<p>hello para</p>");
+
+	// body...
+}
+function myMove(){
+	myWindow.moveBy(200,200);
+	myWindow.focus();
+}
+
+
+// function test() {
+// 	var time=setTimeout(function(){
+// 	alert("hello");
+// 	// body...
+
+
+
+// },3500);}
+// function stopTime() {
+// 	clerTimeOut(time);
+// 	// body...
+// }
+inter=setInterval(function(){
+// 	myTime();
+// },1000);
+// function myTime(){
+// 	var d=new Date();
+// 	var x=d.toLocaleTimeString();
+// 	document.getElementById('div_demo').innerHTML=x;
+// }
+// function stopTime() 
+// {
+// clearInterval(inter);
+// 	// body...
+// }
+// function myFunction(){
+// 	var x=document.cookie;
+// 	document.getElementById("div_demo").innerHTML=x;
+// }
+// document.addEventListener('click',function(){
+// document.getElementById("div_demo").innerHTML="helloooo";
+// });
+// var myWindow;
+// var 
+// function myOpen(){
+// 	myWindow=window.open("","myWindow","width=400px,height=200px");
+// }
+// function myClose()
+// {
+// 	myWindow=window.close();
+// }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<style type="text/css">
+	table
+	{
+		border:2px solid black;
+		margin: auto;
+		font-size: 40px;
+
+
+	}
+	/*td{
+		border:1px solid black;
+	}*/
+
+	
+</style>
+</head>
+<body>
+<table cellpadding="30px" cellspacing="15px" >
+	<tr class="demo">
+	<td onmouseover="mOver(this)" onmouseout="mOut(this)">1</td>
+	<td onmouseover="mOver(this)" onmouseout="mOut(this)">2</td>
+	<td onmouseover="mOver(this)" onmouseout="mOut(this)">3</td>
+	<td onmouseover="mOver(this)" onmouseout="mOut(this)">4</td>
+	</tr>
+</table>
+<script type="text/javascript">
+function mOver(e) {
+	e.style.border="3px solid red";
+	// body...
+}
+function mOut(e){
+	e.style="remove";
+}
+
+	
+</script>
+
+</body>
+</html>

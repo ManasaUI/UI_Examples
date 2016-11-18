@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/menu.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+<div id="content"></div>
+<script type="text/jsx">
+	var Comp=React.createClass({
+	getInitialState: function(){
+	return {focused: 0};
+	},
+	clicked: function(index){
+	this.setState({focused: index});
+	},
+	render: function(){
+	var self=this;
+	return (<div>
+		<ul>{this.props.items.map(function(m, index){
+		var style='';
+		if(self.state.focused==index){
+		style='focused';
+		}
+		return <li className={style} onClick={self.clicked.bind(self,index)}>{m}</li>
+
+		}
+		)}
+			
+		</ul>
+		<p>Selectd:{this.props.items[this.state.focused]}</p>
+		
+	</div> );
+	}
+	});
+	React.render(<Comp items={['About','Home','Services','Technologies','Contact us']}/>,document.getElementById('content'));
+</script>
+</body>
+</html>

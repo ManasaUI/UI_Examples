@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>bs2ndap</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="myModule1" , ng-controller="myController1">
+{{message}}
+</div>
+<div id="secondApp" , ng-controller="myController2">
+	{{message}}
+</div>
+<script type="text/javascript">
+	var myApp1=angular.module("myModule1",[]);
+	myApp1.controller("myController1",function($scope) {
+		$scope.message="Im in First angular js app";
+		// body...
+	});
+	var myApp2=angular.module("myApp2",[]);
+	myApp2.controller("myController2",function($scope) {
+		$scope.message="Im in second angular js app";
+		// body...
+	});
+	var sApp=document.getElementById('secondApp');
+	angular.element(document).ready(function () {
+		angular.bootstrap(sApp,['myApp2']);
+		// body...
+	});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<input type="text" id="id1" onchange="myFunction()"> </input>
+<!--<h2 id="demo" style='color:blue' onmouseover="myText()" onmouseout="myTexto()">Mouse Over Me</h2>-->
+<h2 class="iddemo1" style='color:blue'>hello manasa</h2>
+<h2 id="id_demo2" style='color:green'>Click Me</h2>
+<h2 id="id_demo1"></h2>
+<form name="form_demo">
+FirstName:<input type="text" value="Manasa"></input><br>
+LastName:<input type="text" value="Reddy"></input><br>
+
+</form>
+<input type="button" onclick="myForm()" value="Tryit">
+<div id="id_demo"></div>
+<!-- 
+<button type="button" name="subject" id="button_demo" onclick="myFunction()">TEST</button><br>
+<form id="myform">
+<select id="select_demo">
+	<option>Red</option>
+	<option>Blue</option>
+	<option>Green</option>
+	<option>Black</option>
+</select>
+</form>
+<div id="test_demo"></div>
+<input type="button" onclick="myFunction()" value="tryitt"></input>
+
+ -->
+
+<script type="text/javascript">
+function myFunction() {
+	var x=document.getElementById("select_demo");
+	x.remove(x.selectedIndex);
+}
+var h=window.innerWidth;
+console.log(h);
+// function myFunction(){
+// 	var x=document.getElementById("button_demo").innerHTML;
+// 	console.log(x);
+
+// }
+// function myText(){
+// 	document.getElementById('demo').innerHTML="hello text changed";
+
+// }
+// function myTexto(){
+// 	document.getElementById('demo').innerHTML="Mouse Over Me";
+
+// }
+// function myFunction(){
+// var x=document.getElementById('id1');
+// x.value = x.value.toUpperCase();
+// }
+
+
+	var x=document.forms['form_demo'];
+	var text="";
+function myForm() {
+	for (var i = 0; i < x.length; i++) {
+		text+=x.elements[i].value+" <br>";
+		document.getElementById("id_demo").innerHTML=text;
+}
+// 	// body...
+}
+// document.getElementById("demo").onclick=change();
+// function change()
+// {
+// 	document.getElementById("demo").innerHTML="oopps";
+// }
+// // document.getElementById('id_demo').innerHTML="Hello Text Changed";
+// document.getElementById("id_demo").style="color:red";
+// document.getElementById('id_demo').setAttribute('style','color:blue');
+//document.getElementById('id_demo').innerHTML="<div>i am div element</div>";
+// var e=document.getElementById('id_demo')
+// document.body.removeChild(e);
+// var n=document.createElement('span');
+// var t=document.createTextNode('Hello I am SPAN');
+// var l=n.appendChild(t);
+// document.body.appendChild(l);
+// var x=document.querySelectorAll(".iddemo1");
+// console.log(x.length);
+// document.getElementById('id_demo1').innerHTML="hiiii"+x[0].innerHTML;
+
+
+//document.getElementById('id_demo').setAttribute('style','color:red');
+
+	// var x=document.getElementById('id_demo');
+	// document.body.removeChild(x);
+		// body...
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	h1{
+		text-align: center;
+		color: red;
+	}
+	</style>
+</head>
+<body>
+<h1> form validetion</h1>
+<form name="myForm"  id="my_demo" method="post" onsubmit="return validate()">
+<table border="1px" align="center" cellpadding="2px" cellspacing="2px">
+	<tr>
+		<td>Name</td><td><input type="text" name="name" required /></td>
+	</tr>
+	<tr>
+		<td>Email</td><td><input type="email" name="email"/></td>
+	</tr>
+	<tr>
+		<td>ZipCode</td><td><input type="text" name="Zip" /></td>
+	</tr>
+	<tr>
+	<td>Country</td>
+	<td>
+		<select name="country">
+			<option value="-1" selected>[choose yours]</option>
+                     <option value="1">USA</option>
+                     <option value="2">UK</option>
+                     <option value="3">INDIA</option>
+		</select>
+	</td>
+	</tr>
+	<tr >
+	<td></td>
+	<td>
+		<input align="center" type="submit" name="Submit"/></input></td>
+	</tr>
+</table>
+</form>
+<div id="div_demo"></div>
+<script type="text/javascript" src="formValidation.js"></script>
+</body>
+</html>

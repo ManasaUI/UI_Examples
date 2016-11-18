@@ -1,0 +1,29 @@
+[
+{
+	"id":"001",
+	"name":"manasa",
+	"salary":3467.0,
+	"location":"us"
+
+},
+
+	{
+		"id":"002",
+	"name":"manasa",
+	"salary":34567.0,
+	"location":"us"
+	},
+	{
+		"id":"003",
+	"name":"venu",
+	"salary":4567.0,
+	"location":"us"
+	},
+	{
+		"id":"004",
+	"name":"hari",
+	"salary":3457.0,
+	"location":"us"
+	}
+
+]

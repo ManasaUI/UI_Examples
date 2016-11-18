@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+//call and apply code
+	var person1={firstName:'manasa',lastName:'reddy'};
+	var person2={firstName:'venu',lastName:'reddy'};
+	function say(greeting){
+		console.log(greeting+',' +this.firstName+" "+this.lastName);
+	}
+	say.call(person1,'hello');
+	say.apply(person2,['hi']);
+	//code for bind
+	var person3={firstName:'haritha',lastName:'reddy'};
+	function tell(){
+		console.log("hello"+","+this.firstName+" "+this.lastName);
+	}
+	var sayhello=tell.bind(person3);
+	sayhello();
+
+</script>
+
+</body>
+</html>

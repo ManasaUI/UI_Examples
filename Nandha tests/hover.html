@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	table
+	{
+		
+		border:5px solid black;
+
+	}
+
+
+	</style>
+</head>
+<body>
+<table id="table_demo" cellpadding="4px">
+</table>
+<div id="div_demo">
+</div>
+<script type="text/javascript">
+var numbers=[1, 2, 3,4];
+var n="";
+for(var i=0;i<numbers.length;i++)
+{
+	n=numbers[i];
+
+var tbl=document.getElementById('table_demo');
+var newRow   = tbl.insertRow();
+		 var newCell  = newRow.insertCell();
+		var newText  = document.createTextNode(n);
+		newCell.addEventListener("mouseover",function(){
+			 	alert("hello");
+
+			 });
+		
+			newCell.appendChild(newText);
+			 
+			// document.body.appendChild(x);
+
+
+}
+// function mouseOver() {
+// 	alert("hello");
+// 	// body...
+// }
+
+</script>
+
+</body>
+</html>

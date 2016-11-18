@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>intro</title>
+	 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+</head>
+<body ng-app>
+<input type="text" value="please enter something" placeholder="enter anything" ng-model="name"></input>
+<P ng-bind="name"></P>
+{{name}}<br/>
+{{40+67}}
+<h4 ng-init="firstname='manasa';lastname='eppa'"><h4>
+	Name with bind:-<p ng-bind="firstname + ',' + lastname"></p><br/>
+	Name with binding expresstion:-{{firstname + " ," + lastname}}
+	<div ng-init="quantity=1;price=4">
+		Total is:-{{quantity*price}} 
+	</div>
+	<div ng-init="users=['manasa','venu','hari']">
+	<span>{{users[0]}}</span>
+	{{users[1]}}
+	{{users[2]}} </div>
+	<div ng-init="user_info={name:'manasa',age:26}">
+		my name is {{user_info.name}} and i am {{user_info.age}}
+	</div>
+	<div ng-init="users_more=[{name:'manasa',age:'26',location:'us'},{name:'venu',age:'30',location:'us'},{name:'ram reddy',age:'57',location:'india'}]">
+	<p ng-repeat='manyUsers in users_more'>
+	{{'name ' + manyUsers.name + ', is ' + manyUsers.age + ' , from ' + manyUsers.location}}
+	</p><br/>
+</body>
+</html>

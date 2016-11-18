@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- <meta charset="UTF-8" /> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+<div id="content"></div>
+<script type="text/jsx">
+	var NewComponent=React.createClass({
+	render: function(){
+	return (
+	<h1>I am a component placed multiple times</h1>
+	);
+	}
+
+	});
+	//React.render(<NewComponent/>,document.getElementById('content')); only for single
+//this is for multiple displays 
+	React.render(
+	<div>
+	<NewComponent  />
+	<NewComponent />
+	<NewComponent />
+	<NewComponent />
+	<NewComponent />
+	</div>, 
+	document.getElementById('content'));
+</script>
+
+</body>
+</html>

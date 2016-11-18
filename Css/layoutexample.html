@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>weblayout</title>
+	<style type="text/css">
+	#layout
+	{
+	   border: 5px solid blue;
+	   overflow: auto;
+	}
+	nav
+	{
+		float:left;
+		border:4px solid red;
+		width: 120px
+
+	}
+	section
+	{
+		border:solid green 4px;
+		margin-left: 120px;
+	}
+	</style>
+</head>
+<body>
+<div id="layout">
+<nav> 
+<span>navigation links</span>
+	<ul>
+		<li><a href="http://www.msn.com/">MSN</a></li>
+		<li><a href="https://www.google.com/">GOOGLE</a></li>
+		<li><a href="https://www.yahoo.com/">YAHOO</a></li>
+	</ul>
+</nav>
+<section>
+<span>Section1</span>
+<p>In the example above, the floated elements are shorter vertically than the block of text they're floated within. However, if the text was not long enough to wrap below the bottom of all the floats, we might see unanticipated effects. If the paragraph above, for instance, only read "Lorem ipsum dolor sit amet," and was followed by another heading of the same style as the "Floats Example" heading, the second heading would appear between the red boxes. Most likely, we want the next heading to be aligned all the way to the left. To accomplish that, we'd need to clear the floats.</p>
+	
+</section>
+<section>
+	<span>Section</span>
+	<p>
+		As mentioned above, when an element is floated it is taken out of the normal flow of the document. It is shifted to the left or right until it touches the edge of its containing box or another floated element.
+
+In the image below, there are three red squares. Two are floated left and one is floated right. Note that the second "left" red square is placed to the right of the first. Additional squares would continue to stack to the right until they filled the containing box, after which they would wrap to the next line.
+	</p>
+</section>
+
+</div>
+
+</body>
+</html>

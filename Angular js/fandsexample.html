@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>fandsexample</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+<div ng-controller="myCon">
+Sum of two numbers in Service is:-  {{sumofnumbers}}
+<br/>
+the sum of two numbers values is showing in consol log.<br/>
+
+<pre>Hi  :- {{data.name}} , your age is {{data.age}} </pre>
+
+</div>
+<script type="text/javascript">
+var myModule=angular.module("myApp",[]);
+myModule.service("mySer",function () {
+
+    this.sum=function (a,b) 
+    {
+       return a+b;// body...
+    };
+    // body...
+});
+myModule.factory("myFac",function () 
+{
+    return {
+        name: 'Manasa',
+        age: '26'
+    };
+
+
+    // body...
+});
+myModule.controller("myCon",["$scope","mySer","myFac",function ($scope,mySer,myFac) 
+{
+    $scope.sumofnumbers=mySer.sum(4,5);
+    console.log(mySer.sum(10,12));
+    $scope.data=myFac;
+
+    // body...
+}]);
+</script>
+</body>
+</html>

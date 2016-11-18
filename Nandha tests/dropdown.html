@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<select id="select_Demo">
+	<option value="red">Red
+	</option>
+	<option value="green">Green</option>
+	<option value="	black">	Black</option>
+	<option value="pink">Pink</option>
+	<option value="orange">Orange</option>
+	<option value="white">White</option>
+</select>
+<button onclick="tryIt()">Submit</button><br><br>
+display previos selected value<div id="div_demo"></div>
+<script type="text/javascript">
+	function tryIt(){
+		
+      var x=document.getElementById('select_Demo');
+
+		console.log(x.options[x.selectedIndex].text);
+		document.getElementById('div_demo').innerHTML=x.options[x.selectedIndex].text;
+
+	}
+</script>
+
+</body>
+</html>

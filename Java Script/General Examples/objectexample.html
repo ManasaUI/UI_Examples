@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>object example</title>
+</head>
+<body>
+<div id="id_demo"> print here</div>
+<script type="text/javascript">
+/* by using object literal */
+
+	var person={
+		name:'manasa',
+		age:'26',
+		location:'US',
+		fullname:function()
+		{
+			return this.name + " " +this.location;
+		}
+		
+	};
+
+	console.log(person);
+	console.log(person.fullname());
+	/* by using the new keyword*/
+	var person1=new Object();
+	person1.name="Venu";
+	person1.age="31";
+	person1.location="US";
+	
+	console.log(person1);
+	/* by usig the object constructor */
+	function person2(name,age,location)
+	{
+		this.name=name;
+		this.age=age;
+		this.location=location;
+	}
+	var user1=new person2("sujatha","49","india");
+	var user2=new person2("ram reddy","56","india");
+	console.log(user1);
+	console.log(user2);
+	/* accessing data from object*/
+	console.log(user1.name);
+	console.log(user1["name"]);
+
+</script>
+
+</body>
+</html>

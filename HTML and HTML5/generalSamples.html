@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+<input id="input_demo" type="text" placeholder=" Search Here" /><br/><br/>
+<table id="table_demo" border="2px">
+<tr>
+<th>name</th>
+<th>alpha2_Code</th>
+<th>alpha3_code</th>
+</tr>
+</table>
+<button>Try to display the data</button>
+<script>
+
+$('button').click(function () {
+	$.ajax({
+		type:'GET',
+		url:'http://services.groupkt.com/country/search?text=un',
+		dataType:'json',
+		
+		success:function(data){
+			console.dir(data);
+			console.log(data.RestResponse.result[0].name);
+			var text="";
+			data = data.RestResponse.result;
+			$.each(data,function(key, item){
+				// console.log(data.RestResponse.result[0].name);
+				console.log(item.name);
+				text+='<tr><td>'+item.name+'</td><td>'+item.alpha2_code+'</td><td>'+item.alpha3_code+'</td></tr>';
+
+			});
+			$('#table_demo').append(text);
+
+
+		},
+		error:function(){
+			console.log("error happend while retriving");
+
+		}
+			
+
+	});
+	// body...
+});
+$("#input_demo").keyup(function () {
+    var value = this.value.toLowerCase().trim();
+
+    $("table tr").each(function (index) {
+        if (!index) return;
+        $(this).find("td").each(function () {
+            var id = $(this).text().toLowerCase().trim();
+            var not_found = (id.indexOf(value) == -1);
+            $(this).closest('tr').toggle(!not_found);
+            return not_found;
+        });
+    });
+});
+</script>
+</body>
+</html>

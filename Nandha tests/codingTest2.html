@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<input type="number" id="id_demo"/>
+<input type="submit" value="Submit" onclick="myFunction()" />
+<table id="tbl_demo" border="1px">
+<tr><th>Number5_8</th>
+</table>
+<table id="tbl_demo5"  border="1px">
+	<tr><th>Number5</th></tr>
+</table>
+<table id="tbl_demo8"  border="1px">
+	<tr><th>Number8</th></tr>
+</table>
+<script>
+function myFunction(){
+	var number=document.getElementById("id_demo").value;
+	var num8_5="";
+	var num5="";
+	var num8="";
+
+	for(var i=1;i<=number;i++)
+	{	
+		if((i%5==0)&&(i%8==0))
+		{
+			num8_5=i;
+			 var tbl = document.getElementById('tbl_demo');
+			   var newRow   = tbl.insertRow();
+			   var newCell  = newRow.insertCell();
+			  var newText  = document.createTextNode(num8_5);
+			  newCell.appendChild(newText);
+			//document.getElementById("table").innerHTML="<tr><td>"+num8_5+"</td></td>";
+		}
+		else{
+				if(i%5==0)
+				{
+			num5=i;
+			 var tbl = document.getElementById('tbl_demo5');
+			 var newRow   = tbl.insertRow();
+			 var newCell  = newRow.insertCell();
+			var newText  = document.createTextNode(num5);
+			 newCell.appendChild(newText);
+				}
+				if (i%8==0) 
+				{
+					
+			num8=i;
+			var tbl = document.getElementById('tbl_demo8');
+			 var newRow   = tbl.insertRow();
+			 var newCell  = newRow.insertCell();
+			var newText  = document.createTextNode(num8);
+			newCell.appendChild(newText);
+					
+				//codepen
+//font awsome
+//scoch.io
+//http://sihlemalinga.info/
+//http://www.megangtalley.com/resume.html
+//http://jessicashambra.wix.com/index#!resume
+//https://www.google.com/search?q=portfolio+samples&biw=1242&bih=602&tbm=isch&imgil=smxZRXnqNI6nTM%253A%253BpBy0cDQYIp4H6M%253Bhttps%25253A%25252F%25252Fsites01.lsu.edu%25252Fwp%25252Fcxc%25252Fdigital-portfolio-examples%25252F&source=iu&pf=m&fir=smxZRXnqNI6nTM%253A%252CpBy0cDQYIp4H6M%252C_&usg=__SEN9p16wPB4ifFGBr8OpEg20tU4%3D&ved=0ahUKEwiHrarRw_zPAhWCSD4KHVJvBxwQyjcINA&ei=GMISWIfBH4KR-QHS3p3gAQ#tbm=isch&q=online+portfolio+professional+samples&imgdii=aVlgW6nlTXvsnM%3A%3BaVlgW6nlTXvsnM%3A%3BzQdHfoc70tfelM%3A&imgrc=aVlgW6nlTXvsnM%3A
+		//WIX
+		//http://www.amanda-bentley.com/home-1
+
+		//http://www.wix.com/website-template/view/html/1893?originUrl=http%3A%2F%2Fwww.wix.com%2Fwebsite%2Ftemplates%2Fhtml%2Fportfolio-cv%2Fresumes-cvs%2F1&bookName=&galleryDocIndex=2&category=portfolio-cv
+				 }
+			}
+		}
+		
+	}
+
+</script>
+
+</body>
+</html>

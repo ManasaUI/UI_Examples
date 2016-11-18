@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<style type="text/css">
+	</style>
+	
+
+</head>
+<body>
+<input type="button" onclick="tryIt()" value="tryIt"></input><br/>
+<div id="div_demo">	
+</div>
+
+
+<script type="text/javascript">
+var obj=[
+{Account:"AAA-1238",TotalAssets:45121.90},
+{Account:"AAA-8122", TotalAssets:12335.79},
+{Account:"AAA-1812", TotalAssets:11900.34},
+{Account:"AAA-3028",TotalAssets: 155.99}
+];
+var text="";
+
+function tryIt()
+{
+	
+	for(var i=0; i<obj.length; i++)
+	{
+	text +=obj[i].Account + " " + obj[i].TotalAssets + "<br/>";
+       document.getElementById("div_demo").innerHTML=text;
+
+        
+	}
+}
+	
+		
+
+
+
+</script>
+</body>
+</html>

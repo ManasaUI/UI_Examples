@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+
+	 </head>
+<body ng-app="myModule" ng-controller="myControler">
+<table border="5px">
+<tr>
+<th>Id</th>
+<th>Name</th>
+<th>Salary</th>
+<th>Location</th>
+</tr>
+<tr ng-repeat="user in users">
+	<td>{{user.id}}</td>
+	<td>{{user.name}}</td>
+	<td>{{user.salary}}</td>
+	<td>{{user.location}}</td>
+</tr>
+
+</table>
+
+<script>
+var myApp=angular.module("myModule",[]);
+myApp.controller("myControler",function ($scope,$http) 
+{
+
+$http.get('data.json').success(function(data)
+	{
+		console.log(data);
+		$scope.users=data;
+
+	});
+	// body...
+});
+	
+</script>
+
+
+</body>
+</html>

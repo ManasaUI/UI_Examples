@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+<input placeholder="Search here...." /><br/><br/>
+<table id="table_demo" border="1px solid black">
+<tr>
+<th>Name</th>
+<th>Alpha2-Code</th>
+<th>Alpha3-Code</th>
+</tr>
+
+</table><br/><br/>
+
+<button>Consume data from the service</button>
+
+<script type="text/javascript">
+	$('button').click(function(){
+		$.ajax({
+			type:'GET',
+			dataType:'json',
+			url:'http://services.groupkt.com/country/search?text=un',
+			success:function(data){
+				data=data.RestResponse.result;
+				console.log(data);
+				var text="";
+				$.each(data,function(key,item){
+				console.log(data[key].name);
+				text+="<tr><td>"+ data[key].name+"</td><td>"+data[key].alpha2_code+"</td><td>"+data[key].alpha3_code+"</td></tr>";
+
+				});
+				$('#table_demo').append(text);
+							
+			},
+			error:function(){
+				console.log('error happend while consuming the data');
+			}
+
+		});
+	});
+
+	$("input").keyup(function() {
+    var value = this.value;
+
+    $("table").find("tr").each(function(index) {
+        if (!index) return;
+        var id = $(this).find("td").first().text();
+        $(this).toggle(id.indexOf(value) !== -1);
+    });
+});
+
+
+
+</script>
+
+</body>
+</html>

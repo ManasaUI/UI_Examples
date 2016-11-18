@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+</head>
+<body ng-app="myModule">
+<div ng-controller="myController">
+	{{fac_value}}<br/><br/>
+	{{addition}}
+</div>
+<script type="text/javascript">
+	myApp=angular.module("myModule",[]);
+	myApp.controller("myController",function ($scope,myFac,mySer) 
+	{
+		myFac.set_values('manasa','us');
+		$scope.fac_value=myFac.display_val();
+		$scope.addition=mySer.add(4,5);
+
+		// body...
+	});
+	myApp.factory("myFac",function()
+	{
+		var fac_obj={};
+		fac_obj.name="";
+		fac_obj.location="";
+		fac_obj.set_values=function(name,location)
+		{
+			fac_obj.name=name;
+			fac_obj.location=location;
+		};
+		fac_obj.display_val=function()
+		{
+			return "my name is " + " " +fac_obj.name + " " +" location is" + " "+ fac_obj.location;
+		}
+		return fac_obj;
+
+	});
+	myApp.service("mySer",function()
+	{
+		this.add=function(x,y)
+		{
+			return x+y;
+		};
+	});
+</script>
+
+</body>
+</html>

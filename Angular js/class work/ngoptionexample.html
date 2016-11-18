@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+<div  ng-app="myModule" ng-controller="myControler">
+<select ng-model="selectedColor" ng-repeat="y.name for (x,y) in fav_colors">
+</select>
+<h1>Your Name:-{{selectedColor.name}}</h1>
+<p>Your favorate color:-{{selectedColor.color}}</p>
+<p> favorate flower is:-{{selectedColor.flower}}</p>
+</div>
+<script type="text/javascript">
+	myApp=angular.module('myModule',[]);
+	myApp.controller('myControler',function ($scope)
+	 {
+	 	$scope.fav_colors={
+	 	user1:{name:'manasa',color:'red',flower:'rose'},
+	 	user2:{name:'venu',color:'blue', flower:'lotus'},
+	 	user3:{name:'hari',color:'green', flower:'lilli'}
+	 }
+	 
+		// body...
+	});
+</script>
+</body>
+</html>
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>example</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+</head>
+<body ng-app="myModule">
+Name:<input ng-model="input_elem" type="text" placeholder="enter name"></input><br/>
+<p ng-bind="input_elem"></p>
+<!-- or binding expression-->
+{{input_elem}}
+{{40+5}}
+<div ng-init="name='Manasa';location='us'">
+{{'my name is '+ name +' from '+ location}}
+</div>
+<h3 ng-init="user_arr=['manasa','venu','hari']">
+	<p>{{ "user1=" +user_arr[0] }}</p>
+	<p>{{ "user2=" +user_arr[1] }}</p>
+	<p>{{ "user3=" +user_arr[2] }}</p>
+
+</h3>
+</div>
+<p ng-init="user_obj={name:'manasa',location:'us',phone:'163256427'}">
+	{{'my name is' +user_obj.name+' from  ' +user_obj.location  +'number is  '+ user_obj.phone}}
+</p>
+<div ng-controller="myControl">
+	{{message}}<br/>
+	{{firstname}}<br/>
+	<input ng-click="select_sport($event)" type="radio" name="sports" value="football">Foodball</input>
+	<input ng-click="select_sport($event)" type="radio" name="sports" value="cricket">Cricket</input>
+	<input ng-click="select_sport($event)" type="radio" name="sports" value="tennies">Tennies</input>
+	<input ng-click="select_sport($event)" type="radio" name="sports" value="basebal">Baseball</input><br/><br/>
+	my favorite sport is:-{{fav_sport}}
+</div><br/><br/>
+<script type="text/javascript">
+	var myApp=angular.module('myModule',[]);
+	myApp.controller('myControl',function ($scope, $rootScope) 
+	{
+		$scope.message='we are in controller';
+		$rootScope.firstname="manasa";
+		$scope.select_sport=function ($event) 
+		{
+			$scope.fav_sport=($event.target.value);
+			// body...
+		};
+	});
+
+</script>
+</body>
+</html>

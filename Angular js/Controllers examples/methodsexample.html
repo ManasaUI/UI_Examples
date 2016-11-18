@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js">
+		
+	</script>
+	<style type="text/css">
+.ng-invalid
+{
+	background-color: red;
+}
+.ng-valid{
+	background-color: green;
+}
+.ng-pristine{
+	background-color: #808080;
+}
+	
+	</style>
+</head>
+<body ng-app="myModule" >
+<div ng-controller="myController">
+<input type="number" name="myInput" ng-model="myNumber" required /><br/>
+<h3>Square of a number is:-{{double(myNumber)}}</h3><br/>
+</div>
+<div ng-controller="myController2">
+<h2>Select your favorite color:-</h2>
+	<input type="radio" value="red" name="color" ng-click="color_type($event)" >Red</input>
+	<input type="radio" value="blue" name="color" ng-click="color_type($event)" >Blue</input>
+	<input type="radio" value="green" name="color" ng-click="color_type($event)">Green</input>
+	<input type="radio" value="yellow" name="color" ng-click="color_type($event)">Yellow</input><br/>
+	Favorate color is:- {{fav_color}}<br/>
+	
+</div>
+<div ng-controller="myController3">
+<h2>Select your favorite language:-</h2>
+	<button  ng-click="lan_type('english')" >english</button>
+	<button ng-click="lan_type('telugu')">telugu</button>
+	<button ng-click="lan_type('french')">french</button>
+	<button ng-click="lan_type('arabic')">arabic</button><br/>
+	Favorate language is:- {{fav_lang}}
+	
+</div>
+
+<script type="text/javascript">
+	myApp=angular.module("myModule",[]);
+	myApp.controller("myController",function ($scope) 
+	{
+		$scope.double=function(a)
+		{
+			return a*a;
+		};
+		// body...
+	});
+	myApp.controller("myController2",function($scope)
+	{
+		$scope.color_type=function($event)
+		{
+              $scope.fav_color=($event.target.value);
+		};
+
+	});
+	myApp.controller("myController3",function($scope)
+	{
+		$scope.lan_type=function(lag)
+		{
+              $scope.fav_lang=lag;
+		};
+
+	});
+
+
+</script>
+</body>
+</html>

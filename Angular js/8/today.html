@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+</head>
+<body ng-app="myModule" ng-controller="myController">
+<div>
+	{{out_put}}
+</div>
+<script type="text/javascript">
+	myApp=angular.module("myModule",[]);
+	myApp.factory("myFac",function()
+	{
+		var fac_obj= {};
+		fac_obj.name="manasa";
+		fac_obj.location="us";
+		return fac_obj;
+	});
+	myApp.decorator('myFac',function($delegate)
+	{
+		$delegate.sayHello=function()
+		{
+			return "Hello Marlabs ," + $delegate.name + " " + $delegate.location ;
+		};
+		return $delegate;
+
+	});
+	myApp.config(function($provide)
+	{
+		$provide.factory("provide_fac",function()
+		{
+			var fac_obj= {};
+			fac_obj.name="manasa";
+			fac_obj.location="us";
+			return fac_obj;
+		});
+	});
+	myApp.controller("myController",function ($scope,myFac,provide_fac)
+	 {
+	 	$scope.out_put=myFac.name +" ," +myFac.location;
+	 	$scope.out_put=myFac.sayHello();
+	 	$scope.out_put=provide_fac.name +" " + provide_fac.location;
+
+		// body...
+	});
+</script>
+
+</body>
+</html>

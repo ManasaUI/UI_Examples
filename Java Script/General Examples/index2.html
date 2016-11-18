@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>general practise</title>
+</head>
+<body>
+<div id="id_demo">write code here</div>
+<h2 id="id_demo1">
+	Hello 
+</h2>
+<p id="id_demo2"> Write code here...!!</p>
+<!--<input type="button" value="click me" onclick="fun()">-->
+
+<script type="text/javascript">
+function fun1()
+{
+	document.getElementById('id_demo1').innerHTML="Self invoking"
+}
+fun1();
+
+function fun2(name)
+{
+	return "Manasa" + " " + name;
+
+}
+document.getElementById("id_demo2").innerHTML=fun2("Eppa");
+</script>
+<!--<script type="text/javascript" src="script2.js"></script>-->
+	
+
+</body>
+</html>

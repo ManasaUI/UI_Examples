@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ngrepetexample</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+</head>
+<body ng-app="myModule">
+
+<div ng-controller="myController" >
+{{obj.name}}<br/>
+{{obj.age}}
+<input type="text", ng-model="model1"></input>
+<div ng-repeat="x in arr">
+<div> the name is {{x.name}}</div>
+<div>the age is {{x.age}}</div>
+</div>
+</div>
+<script type="text/javascript">
+	angular.module("myModule",[]);
+	angular.module("myModule").controller("myController",function ($scope) 
+
+	{
+		$scope.model1="showing the array of objects";
+		$scope.obj=
+		{
+			name:'family',
+			age:100,
+
+		}
+		$scope.arr=[
+		{
+			name:'manasa',
+			age:25,
+		},
+		{
+			name:'venu',
+			age:31,
+		},
+		{
+			name:'ram reddy',
+			age:56,
+
+		},
+		{
+			name:'sujatha',
+			age:48,
+		}
+		]});
+</script>
+
+
+</body>
+</html>

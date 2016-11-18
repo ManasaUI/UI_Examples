@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+{{profile}}<br/>
+<div ng-repeat="key in users_obj track by $index">
+  <a href="#/users/{{$index}}">{{key.name}}</a><br /><br />
+</div>
+
+</body>
+</html>

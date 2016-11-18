@@ -1,0 +1,52 @@
+@import "profile";
+$hColor:pink;
+$bColor:blue;
+$textColor:white;
+$hColor:pink;
+
+nav{
+	ul{
+	background-color:$bColor;
+	list-style:none;
+	width:100%;
+	height:80px;
+	margin: 0;
+    padding: 0;
+	}
+	li{
+	
+	display:inline-block;
+	align:center;
+	text-align: center;
+
+	}
+	a{
+	color:$textColor;
+	text-decoration:none;
+	padding:16px;
+	font-size:30px;
+	
+
+	}
+	a:hover{
+	background-color:$hColor;
+	}
+
+}
+
+p{
+font-size:30px;
+	
+}
+
+.bPannel
+{
+	border:2px solid green;
+	background-color:blue;
+	width:200px;
+	height:100px;
+	font-size:40px;
+}
+.sPannel{
+	@extend .bPannel;
+}

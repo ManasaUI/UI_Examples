@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	</style>
+</head>
+<body>
+<li>
+<ol style="background-color: grey"type="1"  id="numberBoth">
+</ol>
+</li>
+<li><ol style="background-color: green" type="1" id="number5"></ol></li>
+<li><ol style="background-color: pink" type="1" id="number8"></ol>
+</li>
+<input id="id_demo" type="number"/>
+<input type="submit" onclick="myNumber()" value="ListSubmit"/>
+<script>
+function myNumber()
+{
+	var number=document.getElementById('id_demo').value;
+	var i;
+	var number5_8 = "";
+	var number5="";
+	var number8="";
+
+for(i=1;i<=number;i++){
+	if((i%5==0)&&(i%8==0)){
+		number5_8+=i+"Fizz,";
+           document.getElementById("numberBoth").innerHTML=number5_8;
+
+	}
+	else{
+		if (i%5==0) {
+			number5+=i+"Fizz," ;
+			document.getElementById("number5").innerHTML=number5;
+		}
+		if(i%8==0){
+			number8+=i+"Buzz,";
+			document.getElementById("number8").innerHTML=number8;
+		}
+	}
+}
+}
+</script>
+
+</body>
+</html>

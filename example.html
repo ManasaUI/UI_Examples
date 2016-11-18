@@ -1,0 +1,48 @@
+
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	#layout_demo{
+		border:2px solid black;
+
+	}
+	</style>
+</head>
+<body>
+<div id="layout_demo">
+Hellooooo how are you what are you doing how was the weekend
+</div>
+<marquee>hello how are you</marquee>
+<A HREF=”mailto:eppa.manasa@gmail.com”>text to be clicked</A><br/>
+<form name="form_sample">
+<fieldset>
+<legend>Personal information</legend>
+First Name:-<input type="text" /><br/>
+Last Name:- <input type="text" /><br/>
+</fieldset>
+</form>
+<input type="button" value="Submit" onclick="myForm()"></input>
+<p id="p_demo">display here</p>
+<P><u>Select favorite color:-</u></P>
+<input type="radio" name="color" /> Red
+<input type="radio" name="color" />Blue
+<input type="radio" name="color" />Green
+<input type="radio" name="color" />Black
+<p>Select your fav color through the color picker</p>
+<input type="color"></input>
+<script type="text/javascript">
+var form=document.forms['form_sample'];
+var text="";
+function myForm() {
+	for(var i=0;i<form.length;i++){
+		text+=form.elements[i].value+",";
+		document.getElementById('p_demo').innerHTML=text;
+	}
+	// body...
+}
+
+</script>
+
+</body>
+</html>
